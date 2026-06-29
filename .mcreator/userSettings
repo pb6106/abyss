@@ -1,0 +1,38 @@
+{
+  "workspacePanelIconSize": "TILES",
+  "workspacePanelSortType": "CREATED",
+  "workspacePanelSortAscending": true,
+  "projectBrowserState": {
+    "expandedPaths": [
+      "[, Abyss]",
+      "[, Abyss, Source (Gradle)]",
+      "[, Abyss, Source (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net]",
+      "[, Abyss, Source (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator]",
+      "[, Abyss, Source (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator\\abyss]",
+      "[, Abyss, Source (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator\\abyss, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator\\abyss\\world]",
+      "[, Abyss, Source (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator\\abyss, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator\\abyss\\world, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator\\abyss\\world\\dimension]",
+      "[, Abyss, Resources (Gradle)]",
+      "[, Abyss, Resources (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\assets]",
+      "[, Abyss, Resources (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\assets, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\assets\\abyss]",
+      "[, Abyss, Resources (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data]",
+      "[, Abyss, Resources (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data\\abyss]",
+      "[, Abyss, Resources (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data\\abyss, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data\\abyss\\dimension]",
+      "[, Abyss, Resources (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data\\abyss, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data\\abyss\\dimension_type]",
+      "[, Abyss, Sounds]"
+    ]
+  },
+  "leftDockState": {
+    "expandedDock": "project_browser",
+    "dockSizes": {
+      "project_browser": 280
+    }
+  },
+  "bottomDockState": {
+    "expandedDock": "console",
+    "dockSizes": {
+      "console": 514,
+      "code_viewer": 300,
+      "debugger": 300
+    }
+  }
+}

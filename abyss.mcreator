@@ -1,0 +1,98 @@
+{
+  "mod_elements": [
+    {
+      "name": "Abyss",
+      "type": "dimension",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "abyss",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/abyss/world/dimension/AbyssDimension.java",
+          "src/main/resources/data/abyss/dimension/abyss.json",
+          "src/main/resources/data/abyss/dimension_type/abyss.json"
+        ]
+      }
+    },
+    {
+      "name": "Abyssbiome",
+      "type": "biome",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "abyssbiome",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/abyss/worldgen/biome/abyssbiome.json"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [
+    {
+      "name": "sn",
+      "files": [
+        "subnautica_soundtrack_-_10__what_are_you",
+        "subnautica_soundtrack_-_9__crush_depth",
+        "subnautica_soundtrack_-_8__finding_life",
+        "subnautica_soundtrack_-_7__sun__moon",
+        "subnautica_soundtrack_-_6__precipice",
+        "subnautica_soundtrack_-_5__in_bloom",
+        "subnautica_soundtrack_-_4__god_rays",
+        "subnautica_soundtrack_-_3__tropical_eden",
+        "subnautica_soundtrack_-_2__into_the_unknown",
+        "subnautica_soundtrack_-_1__salutations"
+      ],
+      "category": "music",
+      "subtitle": ""
+    }
+  ],
+  "tag_elements": {
+    "BLOCKS:minecraft:overworld_carver_replaceables": [],
+    "BIOMES:minecraft:has_structure/ocean_monument": [],
+    "BIOMES:minecraft:has_structure/shipwreck": [],
+    "BIOMES:minecraft:has_structure/ocean_ruin_cold": [],
+    "BIOMES:minecraft:is_deep_ocean": [],
+    "BIOMES:minecraft:is_ocean": [],
+    "BIOMES:minecraft:required_ocean_monument_surrounding": []
+  },
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "subtitles.sn": "",
+      "biome.abyss.abyssbiome": "Abyssbiome"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/resources/META-INF/neoforge.mods.toml",
+      "src/main/resources/assets/abyss/sounds.json",
+      "src/main/java/net/mcreator/abyss/AbyssMod.java",
+      "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/abyss/init/AbyssModSounds.java"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "abyss",
+    "modName": "Abyss",
+    "version": "1.2.0",
+    "description": "Simply adds a deep ocean",
+    "author": "Prodigy",
+    "websiteURL": "https://modrinth.com/mod/deepseasabyss",
+    "license": "MIT License",
+    "serverSideOnly": false,
+    "modPicture": "untitled_design_44",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.21.1",
+    "credits": "fish",
+    "modElementsPackage": "net.mcreator.abyss"
+  },
+  "mcreatorVersion": 202600114619
+}

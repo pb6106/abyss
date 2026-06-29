@@ -1,0 +1,70 @@
+{
+  "_fv": 85,
+  "_type": "dimension",
+  "definition": {
+    "biomesInDimension": [
+      {
+        "value": "CUSTOM:Abyssbiome"
+      }
+    ],
+    "biomesInDimensionCaves": [],
+    "worldGenType": "Normal world gen",
+    "mainFillerBlock": {
+      "value": "Blocks.MUD"
+    },
+    "fluidBlock": {
+      "value": "Blocks.WATER"
+    },
+    "seaLevel": 1000,
+    "generateOreVeins": false,
+    "generateAquifers": false,
+    "horizontalNoiseSize": 4,
+    "verticalNoiseSize": 1,
+    "defaultEffects": "overworld",
+    "useCustomEffects": true,
+    "hasClouds": true,
+    "cloudHeight": 1256,
+    "skyType": "NORMAL",
+    "sunHeightAffectsFog": false,
+    "canRespawnHere": true,
+    "hasFog": false,
+    "ambientLight": 0.0,
+    "doesWaterVaporize": false,
+    "hasFixedTime": true,
+    "fixedTimeValue": 18000,
+    "coordinateScale": 1.0,
+    "infiniburnTag": "minecraft:infiniburn_overworld",
+    "bedWorks": true,
+    "hasSkyLight": true,
+    "imitateOverworldBehaviour": false,
+    "piglinSafe": false,
+    "hasRaids": false,
+    "minMonsterSpawnLightLimit": 0,
+    "maxMonsterSpawnLightLimit": 0,
+    "monsterSpawnBlockLightLimit": 0,
+    "portalFrame": {
+      "value": ""
+    },
+    "portalParticles": {
+      "value": "PORTAL"
+    },
+    "portalLuminance": 0,
+    "portalSound": {
+      "value": "block.portal.ambient"
+    },
+    "enableIgniter": true,
+    "igniterName": "Abyss Portal Igniter",
+    "igniterRarity": "COMMON",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "TOOLS"
+      }
+    ],
+    "texture": "",
+    "portalTexture": "",
+    "enablePortal": false
+  }
+}

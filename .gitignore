@@ -1,0 +1,16 @@
+# Gradle / NeoForge
+/.gradle/
+/build/
+/run/
+
+# IDE
+/.eclipse/
+.idea/
+*.iml
+
+# MCreator
+/.mcreator/workspaceBackups/
+
+# OS
+.DS_Store
+Thumbs.db
