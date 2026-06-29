@@ -56,5 +56,5 @@ Music inspired by the Subnautica soundtrack. Created by **Prodigy**.
 
 ## Links
 
-- **Modrinth:** https://modrinth.com/mod/deepseasabyss
+- **Modrinth:** https://modrinth.com/mod/deepabyss
 - **Issues:** https://github.com/pb6106/abyss/issues
