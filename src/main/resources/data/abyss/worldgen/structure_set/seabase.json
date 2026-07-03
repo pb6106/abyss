@@ -1,14 +1,14 @@
 {
   "structures": [
     {
-      "structure": "abyss:abyss_structures",
+      "structure": "abyss:seabase",
       "weight": 1
     }
   ],
   "placement": {
     "type": "minecraft:random_spread",
-    "spacing": 28,
-    "separation": 10,
-    "salt": 48291637
+    "spacing": 52,
+    "separation": 20,
+    "salt": 91827364
   }
 }

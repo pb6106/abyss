@@ -5,15 +5,6 @@
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "abyss:seabase",
-        "processors": "minecraft:empty",
-        "projection": "rigid"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "element_type": "minecraft:single_pool_element",
         "location": "abyss:submarinewreck",
         "processors": "minecraft:empty",
         "projection": "rigid"

@@ -16,7 +16,7 @@ Abyss adds a dedicated deep-ocean dimension built for long, vertical underwater 
 
 Vanilla ocean structures can still appear here, including **shipwrecks** and **cold ocean ruins**, giving subs and survival players something to find on the way down.
 
-Custom **seabases** and **submarine wrecks** (six variants) also generate on the mud floor throughout the dimension.
+Custom **submarine wrecks** (five variants) generate fairly often on the mud floor. **Seabases** are the same size but much rarer. Both can spawn facing any direction.
 
 ## Built for Create: Deep Seas
 
