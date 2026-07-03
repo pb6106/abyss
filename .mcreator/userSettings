@@ -1,0 +1,26 @@
+{
+  "workspacePanelIconSize": "TILES",
+  "workspacePanelSortType": "CREATED",
+  "workspacePanelSortAscending": true,
+  "projectBrowserState": {
+    "expandedPaths": [
+      "[, Abyss]",
+      "[, Abyss, Source (Gradle)]",
+      "[, Abyss, Resources (Gradle)]",
+      "[, Abyss, Sounds]"
+    ]
+  },
+  "leftDockState": {
+    "dockSizes": {
+      "project_browser": 280
+    }
+  },
+  "bottomDockState": {
+    "expandedDock": "console",
+    "dockSizes": {
+      "console": 57,
+      "code_viewer": 300,
+      "debugger": 300
+    }
+  }
+}

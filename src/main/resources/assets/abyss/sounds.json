@@ -1,0 +1,46 @@
+{
+  "sn": {
+    "sounds": [
+      {
+        "name": "abyss:subnautica_soundtrack_-_10__what_are_you",
+        "stream": true
+      },
+      {
+        "name": "abyss:subnautica_soundtrack_-_9__crush_depth",
+        "stream": true
+      },
+      {
+        "name": "abyss:subnautica_soundtrack_-_8__finding_life",
+        "stream": true
+      },
+      {
+        "name": "abyss:subnautica_soundtrack_-_7__sun__moon",
+        "stream": true
+      },
+      {
+        "name": "abyss:subnautica_soundtrack_-_6__precipice",
+        "stream": true
+      },
+      {
+        "name": "abyss:subnautica_soundtrack_-_5__in_bloom",
+        "stream": true
+      },
+      {
+        "name": "abyss:subnautica_soundtrack_-_4__god_rays",
+        "stream": true
+      },
+      {
+        "name": "abyss:subnautica_soundtrack_-_3__tropical_eden",
+        "stream": true
+      },
+      {
+        "name": "abyss:subnautica_soundtrack_-_2__into_the_unknown",
+        "stream": true
+      },
+      {
+        "name": "abyss:subnautica_soundtrack_-_1__salutations",
+        "stream": true
+      }
+    ]
+  }
+}

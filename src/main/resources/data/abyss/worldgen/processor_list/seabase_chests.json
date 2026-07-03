@@ -1,0 +1,117 @@
+{
+  "processors": [
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "location_predicate": { "predicate_type": "minecraft:always_true" },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": { "Name": "minecraft:chest", "Properties": { "facing": "north", "type": "single" } }
+          },
+          "output_state": { "Name": "minecraft:chest", "Properties": { "facing": "north", "type": "single" } },
+          "block_entity_modifier": { "type": "minecraft:append_loot", "loot_table": "abyss:chests/seabase" }
+        },
+        {
+          "location_predicate": { "predicate_type": "minecraft:always_true" },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": { "Name": "minecraft:chest", "Properties": { "facing": "north", "type": "left" } }
+          },
+          "output_state": { "Name": "minecraft:chest", "Properties": { "facing": "north", "type": "left" } },
+          "block_entity_modifier": { "type": "minecraft:append_loot", "loot_table": "abyss:chests/seabase" }
+        },
+        {
+          "location_predicate": { "predicate_type": "minecraft:always_true" },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": { "Name": "minecraft:chest", "Properties": { "facing": "north", "type": "right" } }
+          },
+          "output_state": { "Name": "minecraft:chest", "Properties": { "facing": "north", "type": "right" } },
+          "block_entity_modifier": { "type": "minecraft:append_loot", "loot_table": "abyss:chests/seabase" }
+        },
+        {
+          "location_predicate": { "predicate_type": "minecraft:always_true" },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": { "Name": "minecraft:chest", "Properties": { "facing": "south", "type": "single" } }
+          },
+          "output_state": { "Name": "minecraft:chest", "Properties": { "facing": "south", "type": "single" } },
+          "block_entity_modifier": { "type": "minecraft:append_loot", "loot_table": "abyss:chests/seabase" }
+        },
+        {
+          "location_predicate": { "predicate_type": "minecraft:always_true" },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": { "Name": "minecraft:chest", "Properties": { "facing": "south", "type": "left" } }
+          },
+          "output_state": { "Name": "minecraft:chest", "Properties": { "facing": "south", "type": "left" } },
+          "block_entity_modifier": { "type": "minecraft:append_loot", "loot_table": "abyss:chests/seabase" }
+        },
+        {
+          "location_predicate": { "predicate_type": "minecraft:always_true" },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": { "Name": "minecraft:chest", "Properties": { "facing": "south", "type": "right" } }
+          },
+          "output_state": { "Name": "minecraft:chest", "Properties": { "facing": "south", "type": "right" } },
+          "block_entity_modifier": { "type": "minecraft:append_loot", "loot_table": "abyss:chests/seabase" }
+        },
+        {
+          "location_predicate": { "predicate_type": "minecraft:always_true" },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": { "Name": "minecraft:chest", "Properties": { "facing": "east", "type": "single" } }
+          },
+          "output_state": { "Name": "minecraft:chest", "Properties": { "facing": "east", "type": "single" } },
+          "block_entity_modifier": { "type": "minecraft:append_loot", "loot_table": "abyss:chests/seabase" }
+        },
+        {
+          "location_predicate": { "predicate_type": "minecraft:always_true" },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": { "Name": "minecraft:chest", "Properties": { "facing": "east", "type": "left" } }
+          },
+          "output_state": { "Name": "minecraft:chest", "Properties": { "facing": "east", "type": "left" } },
+          "block_entity_modifier": { "type": "minecraft:append_loot", "loot_table": "abyss:chests/seabase" }
+        },
+        {
+          "location_predicate": { "predicate_type": "minecraft:always_true" },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": { "Name": "minecraft:chest", "Properties": { "facing": "east", "type": "right" } }
+          },
+          "output_state": { "Name": "minecraft:chest", "Properties": { "facing": "east", "type": "right" } },
+          "block_entity_modifier": { "type": "minecraft:append_loot", "loot_table": "abyss:chests/seabase" }
+        },
+        {
+          "location_predicate": { "predicate_type": "minecraft:always_true" },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": { "Name": "minecraft:chest", "Properties": { "facing": "west", "type": "single" } }
+          },
+          "output_state": { "Name": "minecraft:chest", "Properties": { "facing": "west", "type": "single" } },
+          "block_entity_modifier": { "type": "minecraft:append_loot", "loot_table": "abyss:chests/seabase" }
+        },
+        {
+          "location_predicate": { "predicate_type": "minecraft:always_true" },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": { "Name": "minecraft:chest", "Properties": { "facing": "west", "type": "left" } }
+          },
+          "output_state": { "Name": "minecraft:chest", "Properties": { "facing": "west", "type": "left" } },
+          "block_entity_modifier": { "type": "minecraft:append_loot", "loot_table": "abyss:chests/seabase" }
+        },
+        {
+          "location_predicate": { "predicate_type": "minecraft:always_true" },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": { "Name": "minecraft:chest", "Properties": { "facing": "west", "type": "right" } }
+          },
+          "output_state": { "Name": "minecraft:chest", "Properties": { "facing": "west", "type": "right" } },
+          "block_entity_modifier": { "type": "minecraft:append_loot", "loot_table": "abyss:chests/seabase" }
+        }
+      ]
+    }
+  ]
+}
