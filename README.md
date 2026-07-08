@@ -1,6 +1,6 @@
 # Abyss
 
-Abyss adds a dedicated deep-ocean dimension built for long, vertical underwater travel. It was designed with **Create: Deep Seas** and its submarine system in mind, giving you a huge, open body of water to dive through without the limits of the Overworld. Even with this, it works just as well for any mod or playstyle that needs a true abyssal environment.
+Abyss adds a dedicated deep-ocean dimension built for long, vertical underwater travel giving you a huge, open body of water to dive through without the limits of the Overworld. Even with this, it works just as well for any mod or playstyle that needs a true abyssal environment.
 
 ## What it adds
 
@@ -18,20 +18,7 @@ Vanilla ocean structures can still appear here, including **shipwrecks** and **c
 
 Custom **submarine wrecks** (five variants) generate fairly often on the mud floor. **Seabases** are the same size but much rarer. Both can spawn facing any direction.
 
-## Built for Create: Deep Seas
-
-If you play with Create: Deep Seas, the Abyss dimension is meant to be the kind of place you actually *want* to take a submarine:
-
-- Enough depth for meaningful crush-depth and pressure gameplay
-- Open water without cave systems cutting through your route
-- Visibility tuned for piloting; dark enough to feel deep, but not so thick that you cannot see where you are going near the surface
-- A large, consistent biome so you are not constantly crossing shallow patches or biome borders
-
-You do not need Create: Deep Seas installed for the dimension to work; it simply does not add anything the mod requires on its own.
-
-## Works beyond submarines
-
-Abyss is also a good fit for:
+Abyss is a good fit for:
 
 - Deep-sea survival or hardcore challenges
 - Underwater base building at extreme depth
