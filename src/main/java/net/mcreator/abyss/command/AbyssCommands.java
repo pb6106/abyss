@@ -52,6 +52,8 @@ public class AbyssCommands {
 	public static void register(RegisterCommandsEvent event) {
 		event.getDispatcher().register(Commands.literal("abyss").requires(source -> source.hasPermission(2))
 				.then(Commands.literal("teleport").executes(context -> teleportToSeafloor(context.getSource())))
+				.then(Commands.literal("exit").executes(context -> exitToWorldSpawn(context.getSource())))
+				.then(Commands.literal("surface").executes(context -> teleportToSurface(context.getSource())))
 				.then(Commands.literal("vision").executes(context -> grantVision(context.getSource())))
 				.then(Commands.literal("placestructure")
 						.then(Commands.literal("seabase").executes(context -> placeStructure(context.getSource(), SEABASE_TEMPLATE)))
@@ -60,6 +62,44 @@ public class AbyssCommands {
 								.then(Commands.argument("type", StringArgumentType.word())
 										.suggests((context, builder) -> SharedSuggestionProvider.suggest(WRECK_TYPE_ALIASES.keySet(), builder))
 										.executes(context -> placeWreck(context.getSource(), StringArgumentType.getString(context, "type")))))));
+	}
+
+	private static int exitToWorldSpawn(CommandSourceStack source) {
+		if (!(source.getEntity() instanceof ServerPlayer player)) {
+			source.sendFailure(Component.literal("This command can only be used by a player."));
+			return 0;
+		}
+
+		ServerLevel overworld = source.getServer().getLevel(Level.OVERWORLD);
+		if (overworld == null) {
+			source.sendFailure(Component.literal("The Overworld is not loaded."));
+			return 0;
+		}
+
+		BlockPos spawn = overworld.getSharedSpawnPos();
+		player.teleportTo(overworld, spawn.getX() + 0.5, spawn.getY(), spawn.getZ() + 0.5, player.getYRot(), player.getXRot());
+		source.sendSuccess(() -> Component.literal("Teleported to world spawn."), true);
+		return 1;
+	}
+
+	private static int teleportToSurface(CommandSourceStack source) {
+		if (!(source.getEntity() instanceof ServerPlayer player)) {
+			source.sendFailure(Component.literal("This command can only be used by a player."));
+			return 0;
+		}
+
+		ServerLevel abyssLevel = source.getServer().getLevel(ABYSS_LEVEL);
+		if (abyssLevel == null) {
+			source.sendFailure(Component.literal("The Abyss dimension is not loaded."));
+			return 0;
+		}
+
+		double x = 0.5;
+		double y = AbyssWorldHelper.SEA_LEVEL;
+		double z = 0.5;
+		player.teleportTo(abyssLevel, x, y, z, player.getYRot(), player.getXRot());
+		source.sendSuccess(() -> Component.literal("Teleported to the Abyss surface at 0, " + AbyssWorldHelper.SEA_LEVEL + ", 0."), true);
+		return 1;
 	}
 
 	private static int teleportToSeafloor(CommandSourceStack source) {

@@ -6,17 +6,17 @@
       "request": "launch",
       "name": "Client",
       "presentation": {
-        "group": "Mod Development - abyss-main",
+        "group": "Mod Development - abyss",
         "order": 0
       },
-      "projectName": "abyss-main",
+      "projectName": "abyss",
       "mainClass": "net.neoforged.devlaunch.Main",
       "args": [
-        "@C:\\Users\\Prodigy\\Downloads\\abyss-main\\build\\moddev\\clientRunProgramArgs.txt"
+        "@C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\build\\moddev\\clientRunProgramArgs.txt"
       ],
       "vmArgs": [
-        "@C:\\Users\\Prodigy\\Downloads\\abyss-main\\build\\moddev\\clientRunVmArgs.txt",
-        "-Dfml.modFolders\u003dmcreator%%C:\\Users\\Prodigy\\Downloads\\abyss-main\\bin\\main"
+        "@C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\build\\moddev\\clientRunVmArgs.txt",
+        "-Dfml.modFolders\u003dmcreator%%C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -28,17 +28,17 @@
       "request": "launch",
       "name": "Server",
       "presentation": {
-        "group": "Mod Development - abyss-main",
+        "group": "Mod Development - abyss",
         "order": 1
       },
-      "projectName": "abyss-main",
+      "projectName": "abyss",
       "mainClass": "net.neoforged.devlaunch.Main",
       "args": [
-        "@C:\\Users\\Prodigy\\Downloads\\abyss-main\\build\\moddev\\serverRunProgramArgs.txt"
+        "@C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\build\\moddev\\serverRunProgramArgs.txt"
       ],
       "vmArgs": [
-        "@C:\\Users\\Prodigy\\Downloads\\abyss-main\\build\\moddev\\serverRunVmArgs.txt",
-        "-Dfml.modFolders\u003dmcreator%%C:\\Users\\Prodigy\\Downloads\\abyss-main\\bin\\main"
+        "@C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\build\\moddev\\serverRunVmArgs.txt",
+        "-Dfml.modFolders\u003dmcreator%%C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
