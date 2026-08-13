@@ -1,0 +1,53 @@
+{
+  "_fv": 85,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:Abysstone"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Abysstone"
+      },
+      {
+        "value": "CUSTOM:Abysstone"
+      },
+      {
+        "value": "CUSTOM:Abysstone"
+      },
+      {
+        "value": "CUSTOM:Abysstone"
+      },
+      {
+        "value": "Items.AMETHYST_SHARD"
+      },
+      {
+        "value": "CUSTOM:Abysstone"
+      },
+      {
+        "value": "CUSTOM:Abysstone"
+      },
+      {
+        "value": "CUSTOM:Abysstone"
+      },
+      {
+        "value": "CUSTOM:Abysstone"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:ReinforcedAbysstone"
+    },
+    "name": "reinforce_abysstone",
+    "namespace": "mod"
+  }
+}

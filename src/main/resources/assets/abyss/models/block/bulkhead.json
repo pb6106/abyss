@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "abyss:block/bulkheadv2",
+    "particle": "abyss:block/bulkheadv2"
+  },
+  "render_type": "solid"
+}

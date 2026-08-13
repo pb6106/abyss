@@ -1,0 +1,9 @@
+{
+  "parent": "abyss:custom/reinfocedabysstone",
+  "textures": {
+    "all": "abyss:block/reinforcedabyss",
+    "particle": "abyss:block/reinforcedabyss",
+    "0": "abyss:block/reinforcedabyss"
+  },
+  "render_type": "solid"
+}

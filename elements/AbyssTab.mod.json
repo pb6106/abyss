@@ -1,0 +1,11 @@
+{
+  "_fv": 85,
+  "_type": "tab",
+  "definition": {
+    "name": "Abyss",
+    "icon": {
+      "value": "Items.WATER_BUCKET"
+    },
+    "showSearch": false
+  }
+}

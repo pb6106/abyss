@@ -37,6 +37,215 @@
           "src/main/resources/data/abyss/loot_table/chests/seabase.json"
         ]
       }
+    },
+    {
+      "name": "Bulkhead",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bulkhead",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/abyss/models/block/bulkhead.json",
+          "src/main/resources/assets/abyss/models/block/bulkhead_1.json",
+          "src/main/resources/assets/abyss/models/block/bulkhead_0.json",
+          "src/main/java/net/mcreator/abyss/block/BulkheadBlock.java",
+          "src/main/resources/data/abyss/loot_table/blocks/bulkhead.json",
+          "src/main/resources/assets/abyss/models/item/bulkhead.json",
+          "src/main/resources/assets/abyss/blockstates/bulkhead.json"
+        ]
+      }
+    },
+    {
+      "name": "AbyssTab",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abyss_tab",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "BulkheadOnBlockRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bulkhead_on_block_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/abyss/procedures/BulkheadOnBlockRightclickedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "BulkheadRedstoneOn",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bulkhead_redstone_on",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/abyss/procedures/BulkheadRedstoneOnProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "BulkheadRedstoneOff",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bulkhead_redstone_off",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/abyss/procedures/BulkheadRedstoneOffProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ReinforcedAbysstone",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reinforced_abysstone",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/abyss/loot_table/blocks/reinforced_abysstone.json",
+          "src/main/java/net/mcreator/abyss/block/ReinforcedAbysstoneBlock.java",
+          "src/main/resources/assets/abyss/models/block/reinforced_abysstone.json",
+          "src/main/resources/assets/abyss/blockstates/reinforced_abysstone.json",
+          "src/main/resources/assets/abyss/models/item/reinforced_abysstone.json"
+        ]
+      }
+    },
+    {
+      "name": "Abysstone",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abysstone",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/abyss/models/block/abysstone.json",
+          "src/main/resources/data/abyss/loot_table/blocks/abysstone.json",
+          "src/main/resources/assets/abyss/models/item/abysstone.json",
+          "src/main/java/net/mcreator/abyss/block/AbysstoneBlock.java",
+          "src/main/resources/assets/abyss/blockstates/abysstone.json"
+        ]
+      }
+    },
+    {
+      "name": "ReinforceAbysstone",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reinforce_abysstone",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/abyss/advancement/recipes/reinforce_abysstone.json",
+          "src/main/resources/data/abyss/recipe/reinforce_abysstone.json"
+        ]
+      }
+    },
+    {
+      "name": "Grate",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "grate",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/abyss/block/GrateBlock.java",
+          "src/main/resources/assets/abyss/models/block/grate.json",
+          "src/main/resources/assets/abyss/blockstates/grate.json",
+          "src/main/resources/data/abyss/loot_table/blocks/grate.json",
+          "src/main/resources/assets/abyss/models/item/grate.json"
+        ]
+      }
+    },
+    {
+      "name": "GrateStonecutter",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "grate_stonecutter",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/abyss/recipe/grate_stonecutter.json",
+          "src/main/resources/data/abyss/advancement/recipes/grate_stonecutter.json"
+        ]
+      }
+    },
+    {
+      "name": "GrateCrafting",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "grate_crafting",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/abyss/recipe/grate_crafting.json",
+          "src/main/resources/data/abyss/advancement/recipes/grate_crafting.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -44,36 +253,49 @@
     {
       "name": "sn",
       "files": [
-        "subnautica_soundtrack_-_10__what_are_you",
-        "subnautica_soundtrack_-_9__crush_depth",
-        "subnautica_soundtrack_-_8__finding_life",
-        "subnautica_soundtrack_-_7__sun__moon",
-        "subnautica_soundtrack_-_6__precipice",
-        "subnautica_soundtrack_-_5__in_bloom",
-        "subnautica_soundtrack_-_4__god_rays",
-        "subnautica_soundtrack_-_3__tropical_eden",
-        "subnautica_soundtrack_-_2__into_the_unknown",
-        "subnautica_soundtrack_-_1__salutations"
+        "biolume_drift",
+        "hull_resonance",
+        "isobar",
+        "pressure_column",
+        "thermocline"
       ],
       "category": "music",
       "subtitle": ""
     }
   ],
-  "tag_elements": {},
+  "tag_elements": {
+    "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:Grate",
+      "~CUSTOM:Abysstone",
+      "~CUSTOM:ReinforcedAbysstone",
+      "~CUSTOM:Bulkhead"
+    ],
+    "BLOCKS:minecraft:needs_iron_tool": [
+      "~CUSTOM:ReinforcedAbysstone"
+    ]
+  },
   "tab_element_order": {},
   "language_map": {
     "en_us": {
       "subtitles.sn": "",
-      "biome.abyss.abyssbiome": "Abyssbiome"
+      "biome.abyss.abyssbiome": "Abyssbiome",
+      "block.abyss.bulkhead": "Bulkhead",
+      "item_group.abyss.abyss_tab": "Abyss",
+      "block.abyss.reinforced_abysstone": "Reinforced Abysstone",
+      "block.abyss.abysstone": "Abysstone",
+      "block.abyss.grate": "Iron Grate"
     }
   },
   "metadata": {
     "files": [
-      "src/main/java/net/mcreator/abyss/init/AbyssModSounds.java",
+      "src/main/java/net/mcreator/abyss/init/AbyssModBlocks.java",
+      "src/main/java/net/mcreator/abyss/init/AbyssModItems.java",
+      "src/main/resources/META-INF/neoforge.mods.toml",
       "src/main/resources/assets/abyss/sounds.json",
-      "src/main/resources/pack.mcmeta",
       "src/main/java/net/mcreator/abyss/AbyssMod.java",
-      "src/main/resources/META-INF/neoforge.mods.toml"
+      "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/abyss/init/AbyssModTabs.java",
+      "src/main/java/net/mcreator/abyss/init/AbyssModSounds.java"
     ]
   },
   "foldersRoot": {
@@ -83,7 +305,7 @@
   "workspaceSettings": {
     "modid": "abyss",
     "modName": "Abyss",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "description": "Simply adds a deep ocean",
     "author": "Prodigy",
     "websiteURL": "https://modrinth.com/mod/deepabyss",

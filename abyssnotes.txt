@@ -1,0 +1,3 @@
+- Remove ocean monuments, mineshafts and ruined portals
+- Add compatibility for mods like xareos world map (removing water color in the dimension so you can look at the seafloor in the map (and the minimap if thats installed)) and create deep seas (making all blocks 15x stronger in the dimension)
+- Add more biomes with plants and different colored fog at some point

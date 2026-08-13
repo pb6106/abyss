@@ -1,5 +1,3 @@
 # THE ABYSS
 The abyss is a mod developed for deep water exploration when paired with other mods, allowing the player to go a thousand blocks underwater, alone and scared with nothing but their imagination. The mod is fairly simple, only containing a dimension, biome, and some other small things like custom commands and structures.
 ![The Sea Floor](https://cdn.modrinth.com/data/S6PDmVRS/images/dedd4ebc5c111ce4590081115dac90eef16401fb.png)
-
-_Note: The music in this mod is owned by Unknown Worlds, I did not make it._

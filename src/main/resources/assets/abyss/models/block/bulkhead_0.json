@@ -1,0 +1,9 @@
+{
+  "parent": "abyss:custom/bulkheadv2open",
+  "textures": {
+    "all": "abyss:block/bulkheadv2",
+    "particle": "abyss:block/bulkheadv2",
+    "0": "abyss:block/bulkheadv2"
+  },
+  "render_type": "solid"
+}

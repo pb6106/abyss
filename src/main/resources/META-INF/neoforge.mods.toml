@@ -4,13 +4,13 @@ license="MIT License"
 
 [[mods]]
 modId="abyss"
-version="2.0.0"
+version="3.0.0"
 displayName="Abyss"
 displayURL="https://modrinth.com/mod/deepabyss"
 logoFile="logo.png"
 credits="fish"
 authors="Prodigy"
-description="Simply adds a deep ocean"
+description="Simply adds a deep ocean with custom building blocks and an original ambient soundtrack."
 
 # Start of user code block mod configuration
 # End of user code block mod configuration

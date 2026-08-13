@@ -2,43 +2,23 @@
   "sn": {
     "sounds": [
       {
-        "name": "abyss:subnautica_soundtrack_-_10__what_are_you",
+        "name": "abyss:biolume_drift",
         "stream": true
       },
       {
-        "name": "abyss:subnautica_soundtrack_-_9__crush_depth",
+        "name": "abyss:hull_resonance",
         "stream": true
       },
       {
-        "name": "abyss:subnautica_soundtrack_-_8__finding_life",
+        "name": "abyss:isobar",
         "stream": true
       },
       {
-        "name": "abyss:subnautica_soundtrack_-_7__sun__moon",
+        "name": "abyss:pressure_column",
         "stream": true
       },
       {
-        "name": "abyss:subnautica_soundtrack_-_6__precipice",
-        "stream": true
-      },
-      {
-        "name": "abyss:subnautica_soundtrack_-_5__in_bloom",
-        "stream": true
-      },
-      {
-        "name": "abyss:subnautica_soundtrack_-_4__god_rays",
-        "stream": true
-      },
-      {
-        "name": "abyss:subnautica_soundtrack_-_3__tropical_eden",
-        "stream": true
-      },
-      {
-        "name": "abyss:subnautica_soundtrack_-_2__into_the_unknown",
-        "stream": true
-      },
-      {
-        "name": "abyss:subnautica_soundtrack_-_1__salutations",
+        "name": "abyss:thermocline",
         "stream": true
       }
     ]

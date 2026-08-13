@@ -75,7 +75,9 @@
     "treeFruits": {
       "value": ""
     },
-    "defaultFeatures": [],
+    "defaultFeatures": [
+      "AmethystGeodes"
+    ],
     "spawnStronghold": false,
     "spawnMineshaft": false,
     "spawnMineshaftMesa": false,
@@ -86,11 +88,11 @@
     "spawnDesertPyramid": false,
     "spawnSwampHut": false,
     "spawnIgloo": false,
-    "spawnOceanMonument": true,
+    "spawnOceanMonument": false,
     "spawnShipwreck": true,
     "spawnShipwreckBeached": false,
     "spawnBuriedTreasure": false,
-    "oceanRuinType": "COLD",
+    "oceanRuinType": "NONE",
     "spawnNetherBridge": false,
     "spawnNetherFossil": false,
     "spawnBastionRemnant": false,

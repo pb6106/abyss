@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_bars"
+    }
+  },
+  "result": {
+    "id": "abyss:grate",
+    "count": 1
+  }
+}

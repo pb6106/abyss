@@ -6,19 +6,31 @@
     "expandedPaths": [
       "[, Abyss]",
       "[, Abyss, Source (Gradle)]",
+      "[, Abyss, Source (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net]",
+      "[, Abyss, Source (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator]",
+      "[, Abyss, Source (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator\\abyss]",
+      "[, Abyss, Source (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator\\abyss, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\java\\net\\mcreator\\abyss\\command]",
       "[, Abyss, Resources (Gradle)]",
-      "[, Abyss, Sounds]"
+      "[, Abyss, Resources (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\assets]",
+      "[, Abyss, Resources (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\assets, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\assets\\abyss]",
+      "[, Abyss, Resources (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data]",
+      "[, Abyss, Resources (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data\\abyss]",
+      "[, Abyss, Resources (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data\\abyss, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data\\abyss\\structure]",
+      "[, Abyss, Resources (Gradle), C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data, C:\\Users\\Blake\\MCreatorWorkspaces\\abyss\\src\\main\\resources\\data\\minecraft]",
+      "[, Abyss, Sounds]",
+      "[, Abyss, Structures]",
+      "[, Abyss, Models]"
     ]
   },
   "leftDockState": {
+    "expandedDock": "project_browser",
     "dockSizes": {
       "project_browser": 280
     }
   },
   "bottomDockState": {
-    "expandedDock": "console",
     "dockSizes": {
-      "console": 57,
+      "console": 459,
       "code_viewer": 300,
       "debugger": 300
     }

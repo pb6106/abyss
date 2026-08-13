@@ -1,4 +1,9 @@
 {
   "subtitles.sn": "",
-  "biome.abyss.abyssbiome": "Abyssbiome"
+  "biome.abyss.abyssbiome": "Abyssbiome",
+  "block.abyss.bulkhead": "Bulkhead",
+  "item_group.abyss.abyss_tab": "Abyss",
+  "block.abyss.reinforced_abysstone": "Reinforced Abysstone",
+  "block.abyss.abysstone": "Abysstone",
+  "block.abyss.grate": "Iron Grate"
 }

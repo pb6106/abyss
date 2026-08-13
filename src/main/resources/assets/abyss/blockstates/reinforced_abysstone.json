@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "abyss:block/reinforced_abysstone",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "abyss:block/reinforced_abysstone"
+    },
+    "axis=z": {
+      "model": "abyss:block/reinforced_abysstone",
+      "x": 90
+    }
+  }
+}

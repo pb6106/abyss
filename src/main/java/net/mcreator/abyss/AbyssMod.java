@@ -24,7 +24,10 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.registries.Registries;
 
+import net.mcreator.abyss.init.AbyssModTabs;
 import net.mcreator.abyss.init.AbyssModSounds;
+import net.mcreator.abyss.init.AbyssModItems;
+import net.mcreator.abyss.init.AbyssModBlocks;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.Queue;
@@ -47,6 +50,9 @@ public class AbyssMod {
 		NeoForge.EVENT_BUS.register(this);
 		modEventBus.addListener(this::registerNetworking);
 		AbyssModSounds.REGISTRY.register(modEventBus);
+		AbyssModBlocks.REGISTRY.register(modEventBus);
+		AbyssModItems.REGISTRY.register(modEventBus);
+		AbyssModTabs.REGISTRY.register(modEventBus);
 		// Start of user code block mod init
 		// End of user code block mod init
 	}

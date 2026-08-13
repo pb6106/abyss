@@ -98,7 +98,7 @@ public class AbyssCommands {
 		double y = AbyssWorldHelper.SEA_LEVEL;
 		double z = 0.5;
 		player.teleportTo(abyssLevel, x, y, z, player.getYRot(), player.getXRot());
-		source.sendSuccess(() -> Component.literal("Teleported to the Abyss surface at 0, " + AbyssWorldHelper.SEA_LEVEL + ", 0."), true);
+		source.sendSuccess(() -> Component.literal("Teleported to the Abyss near 0, " + AbyssWorldHelper.SEA_LEVEL + ", 0."), true);
 		return 1;
 	}
 
@@ -128,7 +128,7 @@ public class AbyssCommands {
 
 		player.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, MobEffectInstance.INFINITE_DURATION, 255, false, false, false));
 		player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, MobEffectInstance.INFINITE_DURATION, 255, false, false, false));
-		source.sendSuccess(() -> Component.literal("Granted Conduit Power and Night Vision."), true);
+		source.sendSuccess(() -> Component.literal("Granted vision."), true);
 		return 1;
 	}
 
