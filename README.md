@@ -4,4 +4,7 @@ The abyss is a mod developed for deep water exploration when paired with other m
 
 ![The Sea Floor](https://cdn.modrinth.com/data/S6PDmVRS/images/dedd4ebc5c111ce4590081115dac90eef16401fb.png)
 
+
+[Check out the OST on Youtube!](https://www.youtube.com/playlist?list=PLSmv__Wh22Oo)
+
 _This mod is in no way affiliated with Create: Deep Seas._
