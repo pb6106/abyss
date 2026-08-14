@@ -22,5 +22,14 @@
         "stream": true
       }
     ]
+  },
+  "trenchbleeder_lucy": {
+    "sounds": [
+      {
+        "name": "abyss:trenchbleeder_lucy",
+        "stream": false,
+        "volume": 0.15
+      }
+    ]
   }
 }
