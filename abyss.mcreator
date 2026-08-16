@@ -261,6 +261,14 @@
       ],
       "category": "music",
       "subtitle": ""
+    },
+    {
+      "name": "trenchbleeder",
+      "files": [
+        "trenchbleeder"
+      ],
+      "category": "ambient",
+      "subtitle": "Something distant"
     }
   ],
   "tag_elements": {
@@ -278,6 +286,7 @@
   "language_map": {
     "en_us": {
       "subtitles.sn": "",
+      "subtitles.abyss.trenchbleeder": "Something distant",
       "biome.abyss.abyssbiome": "Abyssbiome",
       "block.abyss.bulkhead": "Bulkhead",
       "item_group.abyss.abyss_tab": "Abyss",
@@ -305,7 +314,7 @@
   "workspaceSettings": {
     "modid": "abyss",
     "modName": "Abyss",
-    "version": "2.2.0",
+    "version": "2.2.1",
     "description": "Simply adds a deep ocean",
     "author": "Prodigy",
     "websiteURL": "https://modrinth.com/mod/deepabyss",

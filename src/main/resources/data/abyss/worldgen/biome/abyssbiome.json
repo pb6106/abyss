@@ -9,10 +9,6 @@
       "offset": 8,
       "block_search_extent": 2
     },
-    "additions_sound": {
-      "sound": "abyss:trenchbleeder_lucy",
-      "tick_chance": 0.0025
-    },
     "music": {
       "sound": "abyss:sn",
       "min_delay": 2000,
