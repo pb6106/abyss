@@ -1,0 +1,15 @@
+{
+  "loader": "fusion:model",
+  "type": "connecting",
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "abyss:block/abyssstone",
+    "particle": "abyss:block/abyssstone"
+  },
+  "connections": [
+    {
+      "type": "is_same_block"
+    }
+  ],
+  "render_type": "solid"
+}

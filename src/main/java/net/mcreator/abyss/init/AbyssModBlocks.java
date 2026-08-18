@@ -1,6 +1,3 @@
-/*
- *    MCreator note: This file will be REGENERATED on each build.
- */
 package net.mcreator.abyss.init;
 
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -26,6 +23,4 @@ public class AbyssModBlocks {
 		ABYSSTONE = REGISTRY.register("abysstone", AbysstoneBlock::new);
 		GRATE = REGISTRY.register("grate", GrateBlock::new);
 	}
-	// Start of user code block custom blocks
-	// End of user code block custom blocks
 }

@@ -24,7 +24,7 @@ public class GrateBlock extends Block implements SimpleWaterloggedBlock {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public GrateBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1f, 11f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false).instrument(NoteBlockInstrument.IRON_XYLOPHONE));
+		super(BlockBehaviour.Properties.of().sound(SoundType.COPPER).strength(1f, 11f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false).instrument(NoteBlockInstrument.IRON_XYLOPHONE));
 		this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false));
 	}
 

@@ -47,7 +47,7 @@ public class BulkheadBlock extends Block {
 	private final ImmutableMap<BlockState, VoxelShape> shapes;
 
 	public BulkheadBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.WEEPING_VINES).strength(1.15f, 1000f).noOcclusion().pushReaction(PushReaction.BLOCK)
+		super(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(3f, 1000f).requiresCorrectToolForDrops().noOcclusion().pushReaction(PushReaction.BLOCK)
 				.isRedstoneConductor((bs, br, bp) -> false).instrument(NoteBlockInstrument.DIDGERIDOO));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OPEN, false).setValue(HALF, DoubleBlockHalf.LOWER));
 		this.shapes = this.makeShapes();
@@ -64,28 +64,28 @@ public class BulkheadBlock extends Block {
 	}
 
 	private static VoxelShape makeFullShape(boolean open, Direction facing) {
-		if (open) {
-			return switch (facing) {
-				default -> Shapes.or(box(2, 1, 13, 14, 32, 29), box(0, 18, 14, 16, 19, 17), box(0, 14, 14, 16, 15, 17), box(0, 14, 17, 16, 19, 18), box(1, 15, 15, 15, 18, 16), box(-2, 1, 16, 17, 32, 17), box(-1, 1, 0, 16, 2, 16),
-						box(-2, 1, -1, 17, 32, 0), box(-2, 31, 0, 17, 32, 16));
-				case NORTH -> Shapes.or(box(2, 1, -13, 14, 32, 3), box(0, 18, -1, 16, 19, 2), box(0, 14, -1, 16, 15, 2), box(0, 14, -2, 16, 19, -1), box(1, 15, 0, 15, 18, 1), box(-1, 1, -1, 18, 32, 0), box(0, 1, 0, 17, 2, 16),
-						box(-1, 1, 16, 18, 32, 17), box(-1, 31, 0, 18, 32, 16));
-				case EAST -> Shapes.or(box(13, 1, 2, 29, 32, 14), box(14, 18, 0, 17, 19, 16), box(14, 14, 0, 17, 15, 16), box(17, 14, 0, 18, 19, 16), box(15, 15, 1, 16, 18, 15), box(16, 1, -1, 17, 32, 18), box(0, 1, 0, 16, 2, 17),
-						box(-1, 1, -1, 0, 32, 18), box(0, 31, -1, 16, 32, 18));
-				case WEST -> Shapes.or(box(-13, 1, 2, 3, 32, 14), box(-1, 18, 0, 2, 19, 16), box(-1, 14, 0, 2, 15, 16), box(-2, 14, 0, -1, 19, 16), box(0, 15, 1, 1, 18, 15), box(-1, 1, -2, 0, 32, 17), box(0, 1, -1, 16, 2, 16),
-						box(16, 1, -2, 17, 32, 17), box(0, 31, -2, 16, 32, 17));
-			};
+		VoxelShape shape = open ? nativeOpenShape() : nativeClosedShape();
+		int turns = (facing.get2DDataValue() - Direction.NORTH.get2DDataValue() + 4) % 4;
+		for (int i = 0; i < turns; i++) {
+			shape = rotateYClockwise(shape);
 		}
-		return switch (facing) {
-			default -> Shapes.or(box(2, 1, 0, 14, 32, 16), box(0, 18, 1, 16, 19, 4), box(0, 14, 1, 16, 15, 4), box(0, 14, 4, 16, 19, 5), box(1, 15, 2, 15, 18, 3), box(-2, 1, 16, 17, 32, 17), box(-1, 1, 0, 16, 2, 16), box(-2, 1, -1, 17, 32, 0),
-					box(-2, 31, 0, 17, 32, 16));
-			case NORTH -> Shapes.or(box(2, 1, 0, 14, 32, 16), box(0, 18, 12, 16, 19, 15), box(0, 14, 12, 16, 15, 15), box(0, 14, 11, 16, 19, 12), box(1, 15, 13, 15, 18, 14), box(-1, 1, -1, 18, 32, 0), box(0, 1, 0, 17, 2, 16),
-					box(-1, 1, 16, 18, 32, 17), box(-1, 31, 0, 18, 32, 16));
-			case EAST -> Shapes.or(box(0, 1, 2, 16, 32, 14), box(1, 18, 0, 4, 19, 16), box(1, 14, 0, 4, 15, 16), box(4, 14, 0, 5, 19, 16), box(2, 15, 1, 3, 18, 15), box(16, 1, -1, 17, 32, 18), box(0, 1, 0, 16, 2, 17), box(-1, 1, -1, 0, 32, 18),
-					box(0, 31, -1, 16, 32, 18));
-			case WEST -> Shapes.or(box(0, 1, 2, 16, 32, 14), box(12, 18, 0, 15, 19, 16), box(12, 14, 0, 15, 15, 16), box(11, 14, 0, 12, 19, 16), box(13, 15, 1, 14, 18, 15), box(-1, 1, -2, 0, 32, 17), box(0, 1, -1, 16, 2, 16),
-					box(16, 1, -2, 17, 32, 17), box(0, 31, -2, 16, 32, 17));
-		};
+		return shape;
+	}
+
+	private static VoxelShape nativeClosedShape() {
+		return Shapes.or(box(-1, 31, 0, 17, 32, 16), box(-1, 0, -1, 17, 32, 1), box(-1, 0, 16, 17, 32, 17), box(-1, 0, -1, 17, 1, 17), box(3, 0, 0, 13, 31, 12),
+				box(3, 0, 13, 13, 12, 16), box(3, 18, 12, 13, 31, 16), box(3, 0, 12, 13, 13, 13), box(5, 12, 12, 11, 18, 16));
+	}
+
+	private static VoxelShape nativeOpenShape() {
+		return Shapes.or(box(-1, 31, 0, 17, 32, 16), box(-1, 0, -1, 17, 32, 1), box(-1, 0, 16, 17, 32, 17), box(-1, 0, -1, 17, 1, 17), box(3, 0, 0, 13, 12, 1),
+				box(3, 18, 0, 13, 31, 1), box(5, 12, 0, 11, 18, 1));
+	}
+
+	private static VoxelShape rotateYClockwise(VoxelShape shape) {
+		VoxelShape[] rotated = new VoxelShape[]{Shapes.empty()};
+		shape.forAllBoxes((minX, minY, minZ, maxX, maxY, maxZ) -> rotated[0] = Shapes.or(rotated[0], Shapes.box(1.0D - maxZ, minY, minX, 1.0D - minZ, maxY, maxX)));
+		return rotated[0];
 	}
 
 	@Override
@@ -123,11 +123,16 @@ public class BulkheadBlock extends Block {
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		BlockPos pos = context.getClickedPos();
 		Level level = context.getLevel();
-		if (pos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(pos.above()).canBeReplaced(context)) {
-			// Face the player, then rotate 90° to match the Blockbench model orientation.
-			return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite().getClockWise()).setValue(OPEN, false).setValue(HALF, DoubleBlockHalf.LOWER);
+		if (pos.getY() >= level.getMaxBuildHeight() - 1 || !level.getBlockState(pos.above()).canBeReplaced(context)) {
+			return null;
 		}
-		return null;
+
+		Direction facing = context.getHorizontalDirection();
+		if (context.getClickedFace().getAxis().isHorizontal()) {
+			facing = context.getClickedFace().getOpposite();
+		}
+
+		return this.defaultBlockState().setValue(FACING, facing.getClockWise()).setValue(OPEN, false).setValue(HALF, DoubleBlockHalf.LOWER);
 	}
 
 	@Override
@@ -151,7 +156,7 @@ public class BulkheadBlock extends Block {
 
 	@Override
 	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-		if (!level.isClientSide && (player.isCreative() || !player.hasCorrectToolForDrops(state))) {
+		if (!level.isClientSide && player.isCreative()) {
 			preventCreativeDropFromBottomPart(level, pos, state, player);
 		}
 		return super.playerWillDestroy(level, pos, state, player);

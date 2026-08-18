@@ -1,9 +1,9 @@
 {
-  "parent": "abyss:custom/bulkheadv2open",
+  "parent": "abyss:custom/bulkheadv3open",
   "textures": {
-    "all": "abyss:block/bulkheadv2",
-    "particle": "abyss:block/bulkheadv2",
-    "0": "abyss:block/bulkheadv2"
+    "particle": "abyss:block/framev3",
+    "0": "abyss:block/framev3",
+    "1": "abyss:block/dooropenv3"
   },
-  "render_type": "solid"
+  "render_type": "cutout"
 }

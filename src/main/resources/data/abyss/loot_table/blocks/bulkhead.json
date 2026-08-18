@@ -6,6 +6,13 @@
       "rolls": 1.0,
       "conditions": [
         {
+          "condition": "minecraft:block_state_property",
+          "block": "abyss:bulkhead",
+          "properties": {
+            "half": "lower"
+          }
+        },
+        {
           "condition": "minecraft:survives_explosion"
         }
       ],

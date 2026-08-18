@@ -2,7 +2,7 @@
   "_fv": 85,
   "_type": "block",
   "definition": {
-    "texture": "bulkheadv2",
+    "texture": "framev3",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
@@ -16,14 +16,14 @@
     "displayFluidOverlay": false,
     "states": [
       {
-        "texture": "bulkheadv2",
+        "texture": "framev3",
         "textureTop": "",
         "textureLeft": "",
         "textureFront": "",
         "textureRight": "",
         "textureBack": "",
         "renderType": 2,
-        "customModelName": "bulkheadv2open:default",
+        "customModelName": "bulkheadv3open:default",
         "particleTexture": "",
         "hasCustomBoundingBox": true,
         "boundingBoxes": [
@@ -120,14 +120,14 @@
         ]
       },
       {
-        "texture": "bulkheadv2",
+        "texture": "framev3",
         "textureTop": "",
         "textureLeft": "",
         "textureFront": "",
         "textureRight": "",
         "textureBack": "",
         "renderType": 2,
-        "customModelName": "bulkheadv2:default",
+        "customModelName": "bulkheadv3:default",
         "particleTexture": "",
         "hasCustomBoundingBox": false,
         "boundingBoxes": [

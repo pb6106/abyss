@@ -1,6 +1,3 @@
-/*
- *    MCreator note: This file will be REGENERATED on each build.
- */
 package net.mcreator.abyss.init;
 
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -26,8 +23,6 @@ public class AbyssModItems {
 		GRATE = block(AbyssModBlocks.GRATE);
 	}
 
-	// Start of user code block custom items
-	// End of user code block custom items
 	private static DeferredItem<Item> block(DeferredHolder<Block, Block> block) {
 		return block(block, new Item.Properties());
 	}

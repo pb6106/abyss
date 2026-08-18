@@ -45,19 +45,14 @@ public class AbyssMod {
 	public static final String MODID = "abyss";
 
 	public AbyssMod(IEventBus modEventBus) {
-		// Start of user code block mod constructor
-		// End of user code block mod constructor
 		NeoForge.EVENT_BUS.register(this);
 		modEventBus.addListener(this::registerNetworking);
 		AbyssModSounds.REGISTRY.register(modEventBus);
 		AbyssModBlocks.REGISTRY.register(modEventBus);
 		AbyssModItems.REGISTRY.register(modEventBus);
 		AbyssModTabs.REGISTRY.register(modEventBus);
-		// Start of user code block mod init
-		// End of user code block mod init
 	}
 
-	// Start of user code block mod methods
 	@SubscribeEvent
 	public void validateStructureTemplates(ServerStartedEvent event) {
 		ServerLevel level = event.getServer().getLevel(ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(MODID, "abyss")));
@@ -75,7 +70,6 @@ public class AbyssMod {
 		}
 	}
 
-	// End of user code block mod methods
 	private static boolean networkingRegistered = false;
 	private static final Map<CustomPacketPayload.Type<?>, NetworkMessage<?>> MESSAGES = new HashMap<>();
 

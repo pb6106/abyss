@@ -1,6 +1,3 @@
-/*
- *    MCreator note: This file will be REGENERATED on each build.
- */
 package net.mcreator.abyss.init;
 
 import net.neoforged.neoforge.registries.DeferredRegister;

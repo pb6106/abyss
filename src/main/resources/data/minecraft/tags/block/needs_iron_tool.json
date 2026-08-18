@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "abyss:bulkhead",
     "abyss:reinforced_abysstone"
   ]
 }

@@ -1,3 +1,5 @@
 - [x] Remove ocean monuments, mineshafts and ruined portals
-- Add compatibility for mods like Xaero's World Map (removing water color in the dimension so you can look at the seafloor on the map/minimap) and Create: Deep Seas (https://www.curseforge.com/minecraft/mc-mods/create-deep-seas — making all blocks 15x stronger in the dimension)
+- Add compatibility for mods like Xaero's World Map (removing water color in the dimension worldmap so you can look at the seafloor on the map/minimap, keeping water color the same in game) and Create: Deep Seas (https://github.com/MaxCreateMC/Create-Deep-Seas/tree/main — making all blocks 15x stronger in the dimension), and fusion (making reinforcded abysstone and iron grates connect)
 - Add more biomes with plants and different colored fog at some point, probably 3.0
+
+C:\Users\Blake\AppData\Roaming\PrismLauncher\instances\abyss beta testing\minecraft\mods
