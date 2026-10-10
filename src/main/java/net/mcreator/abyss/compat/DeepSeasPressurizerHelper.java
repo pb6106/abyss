@@ -12,7 +12,6 @@ import net.mcreator.abyss.init.AbyssModBlocks;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
@@ -24,12 +23,9 @@ public final class DeepSeasPressurizerHelper {
  private static final String DEEP_SEAS_MOD_ID = "create_submarine";
 
  private static Method getCompartments;
- private static Method getActualBlockState;
- private static Method hullConfigGetFor;
  private static Method isCompromised;
  private static Method findSubLevelId;
  private static Constructor<?> hullPropertyCtor;
- private static Constructor<?> weakPointCtor;
  private static Class<?> componentClass;
 
  private DeepSeasPressurizerHelper() {
@@ -86,69 +82,38 @@ public final class DeepSeasPressurizerHelper {
  }
 
  public static Object scaleHullProperty(Object hullProperty, UUID subId, Level plotLevel, BlockPos plotPos) {
-  if (hullProperty == null || !isDeepSeasLoaded() || !compartmentHasPressurizer(subId, plotLevel, plotPos)) {
+  if (hullProperty == null || !isDeepSeasLoaded()) {
+   return hullProperty;
+  }
+  Object comp = compartmentForHull(subId, plotPos);
+  if (comp == null) {
+   comp = compartmentAdjacent(subId, plotPos);
+  }
+  if (comp == null || !compartmentHasPressurizerForSub(subId, comp, plotLevel)) {
    return hullProperty;
   }
   return scaleHullProperty(hullProperty, DEPTH_MULTIPLIER);
  }
 
- public static int effectiveMaxDepth(UUID subId, Level plotLevel, BlockPos hullPos, int baseDepth) {
-  if (!isDeepSeasLoaded()) {
-   return baseDepth;
-  }
-  Object comp = compartmentForHull(subId, hullPos);
-  if (comp == null || !compartmentHasPressurizer(comp, plotLevel)) {
-   return baseDepth;
-  }
-  return Math.max(1, baseDepth * DEPTH_MULTIPLIER);
- }
-
- public static Object weakestHull(UUID subId, Level plotLevel) {
+ /** True when an abyssal pressurizer sits in any sealed, uncompromised compartment on this sub. */
+ public static boolean submarineHasSealedPressurizer(UUID subId, Level plotLevel) {
   if (!ensureReflection()) {
-   return null;
+   return false;
   }
   try {
-   Class<?> tracker = Class.forName("com.maxenonyme.createsubmarine.submarine.compartment.CompartmentTracker");
-   Class<?> pressure = Class.forName("com.maxenonyme.createsubmarine.submarine.system.SubmarinePressureSystem");
    @SuppressWarnings("unchecked")
    List<Object> comps = (List<Object>) getCompartments.invoke(null, subId);
-   Object weakest = null;
-   int weakestDepth = Integer.MAX_VALUE;
    for (Object comp : comps) {
     if (!isUsableCompartment(subId, comp)) {
      continue;
     }
-    @SuppressWarnings("unchecked")
-    Set<BlockPos> hull = (Set<BlockPos>) componentClass.getMethod("hull").invoke(comp);
-    boolean boosted = compartmentHasPressurizer(comp, plotLevel);
-    for (BlockPos bp : hull) {
-     if (!facesExterior(subId, bp)) {
-      continue;
-     }
-     BlockState state = plotLevel.getBlockState(bp);
-     if (state.isAir()) {
-      continue;
-     }
-     BlockState strengthState = (BlockState) getActualBlockState.invoke(null, plotLevel, bp, state);
-     Optional<?> propOpt = (Optional<?>) hullConfigGetFor.invoke(null, strengthState);
-     if (propOpt.isEmpty()) {
-      continue;
-     }
-     int depth = (int) propOpt.get().getClass().getMethod("maxWaterDepth").invoke(propOpt.get());
-     if (boosted) {
-      depth = Math.max(1, depth * DEPTH_MULTIPLIER);
-     }
-     if (depth < weakestDepth) {
-      weakestDepth = depth;
-      weakest = weakPointCtor.newInstance(depth, strengthState, bp.immutable());
-     }
+    if (compartmentContainsPressurizer(comp, plotLevel)) {
+     return true;
     }
    }
-   return weakest;
-  } catch (ReflectiveOperationException exception) {
-   AbyssMod.LOGGER.warn("Failed to compute pressurized weakest hull for submarine {}", subId, exception);
-   return null;
+  } catch (ReflectiveOperationException ignored) {
   }
+  return false;
  }
 
  private static boolean ensureReflection() {
@@ -160,17 +125,13 @@ public final class DeepSeasPressurizerHelper {
   }
   try {
    Class<?> tracker = Class.forName("com.maxenonyme.createsubmarine.submarine.compartment.CompartmentTracker");
-   Class<?> pressure = Class.forName("com.maxenonyme.createsubmarine.submarine.system.SubmarinePressureSystem");
    Class<?> hullConfig = Class.forName("com.maxenonyme.createsubmarine.submarine.config.HullStrengthConfig");
    componentClass = Class.forName("com.maxenonyme.createsubmarine.submarine.compartment.CompartmentDetector$Component");
    getCompartments = tracker.getMethod("getCompartments", UUID.class);
    isCompromised = tracker.getMethod("isCompromised", UUID.class, BlockPos.class);
    Class<?> subLevelRegistry = Class.forName("com.maxenonyme.createsubmarine.submarine.util.SubLevelRegistry");
    findSubLevelId = subLevelRegistry.getMethod("findUUID", Level.class, BlockPos.class);
-   getActualBlockState = pressure.getMethod("getActualBlockState", Level.class, BlockPos.class, BlockState.class);
-   hullConfigGetFor = hullConfig.getMethod("getFor", BlockState.class);
    hullPropertyCtor = findRecordConstructor(hullConfig, "HullProperty", int.class, float.class);
-   weakPointCtor = findRecordConstructor(pressure, "WeakPoint", int.class, BlockState.class, BlockPos.class);
    return true;
   } catch (ReflectiveOperationException exception) {
    AbyssMod.LOGGER.error("Could not bind Create: Deep Seas pressurizer compat", exception);
@@ -188,9 +149,12 @@ public final class DeepSeasPressurizerHelper {
   }
  }
 
- private static boolean compartmentHasPressurizer(UUID subId, Level plotLevel, BlockPos plotPos) {
-  Object comp = compartmentAdjacent(subId, plotPos);
-  return comp != null && compartmentHasPressurizer(comp, plotLevel);
+ private static boolean compartmentHasPressurizerForSub(UUID subId, Object comp, Level plotLevel) {
+  try {
+   return isUsableCompartment(subId, comp) && compartmentContainsPressurizer(comp, plotLevel);
+  } catch (ReflectiveOperationException exception) {
+   return false;
+  }
  }
 
  private static Object compartmentForHull(UUID subId, BlockPos hullPos) {
@@ -201,9 +165,6 @@ public final class DeepSeasPressurizerHelper {
    @SuppressWarnings("unchecked")
    List<Object> comps = (List<Object>) getCompartments.invoke(null, subId);
    for (Object comp : comps) {
-    if (!isUsableCompartment(subId, comp)) {
-     continue;
-    }
     @SuppressWarnings("unchecked")
     Set<BlockPos> hull = (Set<BlockPos>) componentClass.getMethod("hull").invoke(comp);
     if (hull.contains(hullPos)) {
@@ -228,18 +189,37 @@ public final class DeepSeasPressurizerHelper {
   }
  }
 
- private static boolean compartmentHasPressurizer(Object comp, Level plotLevel) {
+ private static boolean compartmentContainsPressurizer(Object comp, Level plotLevel) {
+  if (!ensureReflection()) {
+   return false;
+  }
   try {
    @SuppressWarnings("unchecked")
    Set<BlockPos> internal = (Set<BlockPos>) componentClass.getMethod("internal").invoke(comp);
    for (BlockPos pos : internal) {
-    if (isActiveInSealedCompartment(plotLevel, pos)) {
+    if (isPressurizerBlock(plotLevel, pos)) {
+     return true;
+    }
+    for (Direction direction : Direction.values()) {
+     if (isPressurizerBlock(plotLevel, pos.relative(direction))) {
+      return true;
+     }
+    }
+   }
+   @SuppressWarnings("unchecked")
+   Set<BlockPos> hull = (Set<BlockPos>) componentClass.getMethod("hull").invoke(comp);
+   for (BlockPos pos : hull) {
+    if (isPressurizerBlock(plotLevel, pos)) {
      return true;
     }
    }
   } catch (ReflectiveOperationException ignored) {
   }
   return false;
+ }
+
+ private static boolean isPressurizerBlock(Level plotLevel, BlockPos pos) {
+  return plotLevel.getBlockState(pos).is(AbyssModBlocks.ABYSSAL_PRESSURIZER.get());
  }
 
  private static Object compartmentContaining(BlockPos internalPos, UUID subId) throws ReflectiveOperationException {
@@ -273,17 +253,4 @@ public final class DeepSeasPressurizerHelper {
   throw new NoSuchMethodException(simpleName);
  }
 
- private static boolean facesExterior(UUID subId, BlockPos bp) {
-  try {
-   Class<?> tracker = Class.forName("com.maxenonyme.createsubmarine.submarine.compartment.CompartmentTracker");
-   Method withinShip = tracker.getMethod("isWithinShip", UUID.class, BlockPos.class);
-   for (Direction dir : Direction.values()) {
-    if (!(boolean) withinShip.invoke(null, subId, bp.relative(dir))) {
-     return true;
-    }
-   }
-  } catch (ReflectiveOperationException ignored) {
-  }
-  return false;
- }
 }
