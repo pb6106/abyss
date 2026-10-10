@@ -1,0 +1,8 @@
+{
+  "parent": "abyss:custom/abyssal_pressurizer_arm",
+  "textures": {
+    "0": "abyss:block/abyssal_pressurizer",
+    "particle": "minecraft:block/bubble_column"
+  },
+  "render_type": "cutout"
+}

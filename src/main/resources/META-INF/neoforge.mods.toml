@@ -4,13 +4,16 @@ license="MIT License"
 
 [[mods]]
 modId="abyss"
-version="2.2.2"
+version="2.3.0"
 displayName="Abyss"
 displayURL="https://modrinth.com/mod/deepabyss"
 logoFile="logo.png"
 credits="fish"
 authors="Prodigy"
 description="Simply adds a deep ocean"
+
+[[mixins]]
+config="abyss.mixins.json"
 
 [[dependencies.abyss]]
     modId="neoforge"
@@ -24,6 +27,13 @@ description="Simply adds a deep ocean"
     type="required"
     versionRange="[1.21.1]"
     ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.abyss]]
+    modId="sable"
+    type="optional"
+    versionRange="[0,)"
+    ordering="NONE"
     side="BOTH"
 
 [[dependencies.abyss]]

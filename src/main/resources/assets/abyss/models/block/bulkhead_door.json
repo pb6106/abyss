@@ -1,0 +1,9 @@
+{
+  "parent": "abyss:custom/bulkheadv3_door",
+  "textures": {
+    "particle": "abyss:block/framev3",
+    "0": "abyss:block/framev3",
+    "1": "abyss:block/doorclosedv3"
+  },
+  "render_type": "cutout"
+}

@@ -9,7 +9,15 @@
 *.iml
 
 # MCreator
+/.mcreator/
 /.mcreator/workspaceBackups/
+
+# IDE / local notes
+/.vscode/
+/abyssnotes.txt
+
+# Optional compile-only mod jars (see libs/compile/README.md)
+/libs/compile/*.jar
 
 # OS
 .DS_Store

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "abyss:blocks/abyssal_pressurizer",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "abyss:abyssal_pressurizer"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    }
+  ]
+}

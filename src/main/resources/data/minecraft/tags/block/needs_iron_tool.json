@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "abyss:bulkhead",
-    "abyss:reinforced_abysstone"
+    "abyss:reinforced_abysstone",
+    "abyss:abyssal_pressurizer"
   ]
 }

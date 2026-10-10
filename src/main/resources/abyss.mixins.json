@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.mcreator.abyss.mixin",
+  "plugin": "net.mcreator.abyss.mixin.AbyssMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "SubmarinePressureSystemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

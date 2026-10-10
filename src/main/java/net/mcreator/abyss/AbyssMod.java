@@ -27,6 +27,7 @@ import net.minecraft.core.registries.Registries;
 import net.mcreator.abyss.init.AbyssModTabs;
 import net.mcreator.abyss.init.AbyssModSounds;
 import net.mcreator.abyss.init.AbyssModItems;
+import net.mcreator.abyss.init.AbyssModBlockEntities;
 import net.mcreator.abyss.init.AbyssModBlocks;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -41,71 +42,72 @@ import it.unimi.dsi.fastutil.ints.IntObjectImmutablePair;
 
 @Mod("abyss")
 public class AbyssMod {
-	public static final Logger LOGGER = LogManager.getLogger(AbyssMod.class);
-	public static final String MODID = "abyss";
+ public static final Logger LOGGER = LogManager.getLogger(AbyssMod.class);
+ public static final String MODID = "abyss";
 
-	public AbyssMod(IEventBus modEventBus) {
-		NeoForge.EVENT_BUS.register(this);
-		modEventBus.addListener(this::registerNetworking);
-		AbyssModSounds.REGISTRY.register(modEventBus);
-		AbyssModBlocks.REGISTRY.register(modEventBus);
-		AbyssModItems.REGISTRY.register(modEventBus);
-		AbyssModTabs.REGISTRY.register(modEventBus);
-	}
+ public AbyssMod(IEventBus modEventBus) {
+  NeoForge.EVENT_BUS.register(this);
+  modEventBus.addListener(this::registerNetworking);
+  AbyssModSounds.REGISTRY.register(modEventBus);
+  AbyssModBlocks.REGISTRY.register(modEventBus);
+  AbyssModBlockEntities.REGISTRY.register(modEventBus);
+  AbyssModItems.REGISTRY.register(modEventBus);
+  AbyssModTabs.REGISTRY.register(modEventBus);
+ }
 
-	@SubscribeEvent
-	public void validateStructureTemplates(ServerStartedEvent event) {
-		ServerLevel level = event.getServer().getLevel(ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(MODID, "abyss")));
-		if (level == null) {
-			LOGGER.warn("Abyss dimension not loaded; skipping structure template validation");
-			return;
-		}
-		StructureTemplateManager manager = level.getStructureManager();
-		for (String name : new String[]{"seabase", "submarinewreck", "submarinewreck_graveyard", "submarinewreck_implosion", "submarinewreck_porthole", "submarinewreck_tube"}) {
-			ResourceLocation id = ResourceLocation.fromNamespaceAndPath(MODID, name);
-			manager.get(id).ifPresentOrElse(template -> {
-				var size = template.getSize();
-				LOGGER.info("Loaded structure template {} ({}x{}x{})", id, size.getX(), size.getY(), size.getZ());
-			}, () -> LOGGER.error("Failed to load structure template {} from data/{}/structure/{}.nbt", id, MODID, name));
-		}
-	}
+ @SubscribeEvent
+ public void validateStructureTemplates(ServerStartedEvent event) {
+  ServerLevel level = event.getServer().getLevel(ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(MODID, "abyss")));
+  if (level == null) {
+   LOGGER.warn("Abyss dimension not loaded; skipping structure template validation");
+   return;
+  }
+  StructureTemplateManager manager = level.getStructureManager();
+  for (String name : new String[]{"seabase", "submarinewreck", "submarinewreck_graveyard", "submarinewreck_implosion", "submarinewreck_porthole", "submarinewreck_tube"}) {
+   ResourceLocation id = ResourceLocation.fromNamespaceAndPath(MODID, name);
+   manager.get(id).ifPresentOrElse(template -> {
+    var size = template.getSize();
+    LOGGER.info("Loaded structure template {} ({}x{}x{})", id, size.getX(), size.getY(), size.getZ());
+   }, () -> LOGGER.error("Failed to load structure template {} from data/{}/structure/{}.nbt", id, MODID, name));
+  }
+ }
 
-	private static boolean networkingRegistered = false;
-	private static final Map<CustomPacketPayload.Type<?>, NetworkMessage<?>> MESSAGES = new HashMap<>();
+ private static boolean networkingRegistered = false;
+ private static final Map<CustomPacketPayload.Type<?>, NetworkMessage<?>> MESSAGES = new HashMap<>();
 
-	private record NetworkMessage<T extends CustomPacketPayload>(StreamCodec<? extends FriendlyByteBuf, T> reader, IPayloadHandler<T> handler) {
-	}
+ private record NetworkMessage<T extends CustomPacketPayload>(StreamCodec<? extends FriendlyByteBuf, T> reader, IPayloadHandler<T> handler) {
+ }
 
-	public static <T extends CustomPacketPayload> void addNetworkMessage(CustomPacketPayload.Type<T> id, StreamCodec<? extends FriendlyByteBuf, T> reader, IPayloadHandler<T> handler) {
-		if (networkingRegistered)
-			throw new IllegalStateException("Cannot register new network messages after networking has been registered");
-		MESSAGES.put(id, new NetworkMessage<>(reader, handler));
-	}
+ public static <T extends CustomPacketPayload> void addNetworkMessage(CustomPacketPayload.Type<T> id, StreamCodec<? extends FriendlyByteBuf, T> reader, IPayloadHandler<T> handler) {
+  if (networkingRegistered)
+   throw new IllegalStateException("Cannot register new network messages after networking has been registered");
+  MESSAGES.put(id, new NetworkMessage<>(reader, handler));
+ }
 
-	@SuppressWarnings({"rawtypes", "unchecked"})
-	private void registerNetworking(final RegisterPayloadHandlersEvent event) {
-		final PayloadRegistrar registrar = event.registrar(MODID);
-		MESSAGES.forEach((id, networkMessage) -> registrar.playBidirectional(id, ((NetworkMessage) networkMessage).reader(), ((NetworkMessage) networkMessage).handler()));
-		networkingRegistered = true;
-	}
+ @SuppressWarnings({"rawtypes", "unchecked"})
+ private void registerNetworking(final RegisterPayloadHandlersEvent event) {
+  final PayloadRegistrar registrar = event.registrar(MODID);
+  MESSAGES.forEach((id, networkMessage) -> registrar.playBidirectional(id, ((NetworkMessage) networkMessage).reader(), ((NetworkMessage) networkMessage).handler()));
+  networkingRegistered = true;
+ }
 
-	private static final Queue<IntObjectPair<Runnable>> workToBeScheduled = new ConcurrentLinkedQueue<>();
-	private static final PriorityQueue<TickTask> workQueue = new PriorityQueue<>(Comparator.comparingInt(TickTask::getTick));
+ private static final Queue<IntObjectPair<Runnable>> workToBeScheduled = new ConcurrentLinkedQueue<>();
+ private static final PriorityQueue<TickTask> workQueue = new PriorityQueue<>(Comparator.comparingInt(TickTask::getTick));
 
-	public static void queueServerWork(int delay, Runnable action) {
-		if (Thread.currentThread().getThreadGroup() == SidedThreadGroups.SERVER)
-			workToBeScheduled.add(new IntObjectImmutablePair<>(delay, action));
-	}
+ public static void queueServerWork(int delay, Runnable action) {
+  if (Thread.currentThread().getThreadGroup() == SidedThreadGroups.SERVER)
+   workToBeScheduled.add(new IntObjectImmutablePair<>(delay, action));
+ }
 
-	@SubscribeEvent
-	public void tick(ServerTickEvent.Post event) {
-		int currentTick = event.getServer().getTickCount();
-		IntObjectPair<Runnable> work;
-		while ((work = workToBeScheduled.poll()) != null) {
-			workQueue.add(new TickTask(currentTick + work.leftInt(), work.right()));
-		}
-		while (!workQueue.isEmpty() && currentTick >= workQueue.peek().getTick()) {
-			workQueue.poll().run();
-		}
-	}
+ @SubscribeEvent
+ public void tick(ServerTickEvent.Post event) {
+  int currentTick = event.getServer().getTickCount();
+  IntObjectPair<Runnable> work;
+  while ((work = workToBeScheduled.poll()) != null) {
+   workQueue.add(new TickTask(currentTick + work.leftInt(), work.right()));
+  }
+  while (!workQueue.isEmpty() && currentTick >= workQueue.peek().getTick()) {
+   workQueue.poll().run();
+  }
+ }
 }

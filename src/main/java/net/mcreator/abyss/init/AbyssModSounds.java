@@ -10,8 +10,8 @@ import net.minecraft.core.registries.Registries;
 import net.mcreator.abyss.AbyssMod;
 
 public class AbyssModSounds {
-	public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(Registries.SOUND_EVENT, AbyssMod.MODID);
-	public static final DeferredHolder<SoundEvent, SoundEvent> SN = REGISTRY.register("sn", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("abyss", "sn")));
-	public static final DeferredHolder<SoundEvent, SoundEvent> TRENCHBLEEDER = REGISTRY.register("trenchbleeder",
-			() -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("abyss", "trenchbleeder")));
+ public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(Registries.SOUND_EVENT, AbyssMod.MODID);
+ public static final DeferredHolder<SoundEvent, SoundEvent> SN = REGISTRY.register("sn", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("abyss", "sn")));
+ public static final DeferredHolder<SoundEvent, SoundEvent> TRENCHBLEEDER = REGISTRY.register("trenchbleeder",
+   () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("abyss", "trenchbleeder")));
 }

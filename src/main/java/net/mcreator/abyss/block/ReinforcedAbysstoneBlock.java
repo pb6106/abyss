@@ -16,26 +16,26 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 public class ReinforcedAbysstoneBlock extends Block {
-	public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
+ public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
 
-	public ReinforcedAbysstoneBlock() {
-		super(BlockBehaviour.Properties.of().strength(3f, 30f).requiresCorrectToolForDrops().sound(SoundType.STONE).instrument(NoteBlockInstrument.BASEDRUM));
-		this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y));
-	}
+ public ReinforcedAbysstoneBlock() {
+  super(BlockBehaviour.Properties.of().strength(3f, 30f).requiresCorrectToolForDrops().sound(SoundType.STONE).instrument(NoteBlockInstrument.BASEDRUM));
+  this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y));
+ }
 
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		super.createBlockStateDefinition(builder);
-		builder.add(AXIS);
-	}
+ @Override
+ protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+  super.createBlockStateDefinition(builder);
+  builder.add(AXIS);
+ }
 
-	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return super.getStateForPlacement(context).setValue(AXIS, context.getClickedFace().getAxis());
-	}
+ @Override
+ public BlockState getStateForPlacement(BlockPlaceContext context) {
+  return super.getStateForPlacement(context).setValue(AXIS, context.getClickedFace().getAxis());
+ }
 
-	@Override
-	public BlockState rotate(BlockState state, Rotation rot) {
-		return RotatedPillarBlock.rotatePillar(state, rot);
-	}
+ @Override
+ public BlockState rotate(BlockState state, Rotation rot) {
+  return RotatedPillarBlock.rotatePillar(state, rot);
+ }
 }

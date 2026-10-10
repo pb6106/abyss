@@ -1,0 +1,26 @@
+{
+  "parent": "abyss:block/abyssal_pressurizer",
+  "display": {
+    "gui": {
+      "scale": [0.8, 0.8, 0.8]
+    },
+    "ground": {
+      "scale": [0.8, 0.8, 0.8]
+    },
+    "fixed": {
+      "scale": [0.8, 0.8, 0.8]
+    },
+    "thirdperson_righthand": {
+      "scale": [0.8, 0.8, 0.8]
+    },
+    "thirdperson_lefthand": {
+      "scale": [0.8, 0.8, 0.8]
+    },
+    "firstperson_righthand": {
+      "scale": [0.8, 0.8, 0.8]
+    },
+    "firstperson_lefthand": {
+      "scale": [0.8, 0.8, 0.8]
+    }
+  }
+}

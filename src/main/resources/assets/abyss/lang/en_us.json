@@ -6,5 +6,9 @@
   "item_group.abyss.abyss_tab": "Abyss",
   "block.abyss.reinforced_abysstone": "Reinforced Abysstone",
   "block.abyss.abysstone": "Abysstone",
-  "block.abyss.grate": "Iron Grate"
+  "block.abyss.grate": "Iron Grate",
+  "block.abyss.abyssal_pressurizer": "Abyssal Pressurizer",
+  "tooltip.abyss.bulkhead": "Shift-use to flip the door.",
+  "tooltip.abyss.abyssal_pressurizer.prefix": "When placed on a ",
+  "tooltip.abyss.abyssal_pressurizer.suffix": " submarine, multiplies the maximum depth of the hull by 10x."
 }

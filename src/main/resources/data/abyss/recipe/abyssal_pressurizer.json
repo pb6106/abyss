@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "drd",
+    "rnr",
+    "drd"
+  ],
+  "key": {
+    "d": {
+      "item": "minecraft:diamond"
+    },
+    "r": {
+      "item": "abyss:reinforced_abysstone"
+    },
+    "n": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "id": "abyss:abyssal_pressurizer",
+    "count": 1
+  }
+}
