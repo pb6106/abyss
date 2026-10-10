@@ -5,6 +5,7 @@
   "plugin": "net.mcreator.abyss.mixin.AbyssMixinPlugin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "BarometerBlockEntityMixin",
     "SubmarinePressureSystemMixin"
   ],
   "injectors": {

@@ -24,7 +24,7 @@ public class AbyssMixinPlugin implements IMixinConfigPlugin {
 
  @Override
  public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-  if (!mixinClassName.contains("SubmarinePressureSystemMixin")) {
+  if (!mixinClassName.contains("SubmarinePressureSystemMixin") && !mixinClassName.contains("BarometerBlockEntityMixin")) {
    return true;
   }
   return isDeepSeasLoaded(targetClassName);
