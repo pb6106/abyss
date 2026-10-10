@@ -9,25 +9,25 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.abyss.block.BulkheadBlock;
 
 public class BulkheadRedstoneOffProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z) {
-		if (!(world instanceof Level level) || level.isClientSide()) {
-			return;
-		}
+ public static void execute(LevelAccessor world, double x, double y, double z) {
+  if (!(world instanceof Level level) || level.isClientSide()) {
+   return;
+  }
 
-		BlockPos pos = BlockPos.containing(x, y, z);
-		BlockState state = level.getBlockState(pos);
-		if (!(state.getBlock() instanceof BulkheadBlock)) {
-			return;
-		}
-		if (state.getValue(BulkheadBlock.HALF) == DoubleBlockHalf.UPPER) {
-			pos = pos.below();
-			state = level.getBlockState(pos);
-			if (!(state.getBlock() instanceof BulkheadBlock)) {
-				return;
-			}
-		}
-		if (state.getValue(BulkheadBlock.OPEN)) {
-			BulkheadBlock.setOpen(level, pos, state, false);
-		}
-	}
+  BlockPos pos = BlockPos.containing(x, y, z);
+  BlockState state = level.getBlockState(pos);
+  if (!(state.getBlock() instanceof BulkheadBlock)) {
+   return;
+  }
+  if (state.getValue(BulkheadBlock.HALF) == DoubleBlockHalf.UPPER) {
+   pos = pos.below();
+   state = level.getBlockState(pos);
+   if (!(state.getBlock() instanceof BulkheadBlock)) {
+    return;
+   }
+  }
+  if (state.getValue(BulkheadBlock.OPEN)) {
+   BulkheadBlock.toggleOpen(level, pos, state, false);
+  }
+ }
 }

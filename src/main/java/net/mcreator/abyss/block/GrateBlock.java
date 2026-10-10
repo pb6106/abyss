@@ -21,55 +21,55 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 public class GrateBlock extends Block implements SimpleWaterloggedBlock {
-	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+ public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-	public GrateBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.COPPER).strength(1f, 11f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false).instrument(NoteBlockInstrument.IRON_XYLOPHONE));
-		this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false));
-	}
+ public GrateBlock() {
+  super(BlockBehaviour.Properties.of().sound(SoundType.COPPER).strength(1f, 11f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false).instrument(NoteBlockInstrument.IRON_XYLOPHONE));
+  this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false));
+ }
 
-	@Override
-	public boolean skipRendering(BlockState state, BlockState adjacentBlockState, Direction side) {
-		return adjacentBlockState.getBlock() == this ? true : super.skipRendering(state, adjacentBlockState, side);
-	}
+ @Override
+ public boolean skipRendering(BlockState state, BlockState adjacentBlockState, Direction side) {
+  return adjacentBlockState.getBlock() == this ? true : super.skipRendering(state, adjacentBlockState, side);
+ }
 
-	@Override
-	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
-		return state.getFluidState().isEmpty();
-	}
+ @Override
+ public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+  return state.getFluidState().isEmpty();
+ }
 
-	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return propagatesSkylightDown(state, worldIn, pos) ? 0 : 1;
-	}
+ @Override
+ public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
+  return propagatesSkylightDown(state, worldIn, pos) ? 0 : 1;
+ }
 
-	@Override
-	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return Shapes.empty();
-	}
+ @Override
+ public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+  return Shapes.empty();
+ }
 
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		super.createBlockStateDefinition(builder);
-		builder.add(WATERLOGGED);
-	}
+ @Override
+ protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+  super.createBlockStateDefinition(builder);
+  builder.add(WATERLOGGED);
+ }
 
-	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		boolean flag = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;
-		return super.getStateForPlacement(context).setValue(WATERLOGGED, flag);
-	}
+ @Override
+ public BlockState getStateForPlacement(BlockPlaceContext context) {
+  boolean flag = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;
+  return super.getStateForPlacement(context).setValue(WATERLOGGED, flag);
+ }
 
-	@Override
-	public FluidState getFluidState(BlockState state) {
-		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
-	}
+ @Override
+ public FluidState getFluidState(BlockState state) {
+  return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+ }
 
-	@Override
-	public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
-		if (state.getValue(WATERLOGGED)) {
-			world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
-		}
-		return super.updateShape(state, facing, facingState, world, currentPos, facingPos);
-	}
+ @Override
+ public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
+  if (state.getValue(WATERLOGGED)) {
+   world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
+  }
+  return super.updateShape(state, facing, facingState, world, currentPos, facingPos);
+ }
 }

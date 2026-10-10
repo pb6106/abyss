@@ -1,0 +1,22 @@
+{
+  "dimension": "abyss:abyss",
+  "priority": 1000,
+  "base_pressure": 1.0,
+  "pressure_function": [
+    {
+      "altitude": 0.0,
+      "value": 1.0,
+      "slope": 0.0
+    },
+    {
+      "altitude": 1000.0,
+      "value": 1.0,
+      "slope": -0.004651162790697674
+    },
+    {
+      "altitude": 1215.0,
+      "value": 0.0,
+      "slope": 0.0
+    }
+  ]
+}

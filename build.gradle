@@ -19,9 +19,12 @@ repositories {
 
 dependencies {
     compileOnly 'maven.modrinth:fusion-connected-textures:1.3.12-neoforge-mc1.21.1'
+    if (file('libs/compile').exists()) {
+        compileOnly fileTree(dir: 'libs/compile', include: ['*.jar'])
+    }
 }
 
-version = '2.2.2'
+version = '2.3.0'
 base.archivesName = "abyss"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
